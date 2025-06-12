@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: data scraping
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/data_scraping_DB
+    username: data_scraping
+    password: data_scraping
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  address: 0.0.0.0
+  port: 8081
