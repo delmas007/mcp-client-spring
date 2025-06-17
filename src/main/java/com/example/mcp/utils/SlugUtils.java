@@ -1,4 +1,4 @@
-package com.example.datas_craping.utils;
+package com.example.mcp.utils;
 
 import com.github.slugify.Slugify;
 

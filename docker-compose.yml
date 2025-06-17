@@ -1,15 +1,15 @@
-name: scraping-database
+name: data-mcp
 services:
   postgresql:
     image: postgres:17.0
     environment:
-      - POSTGRES_USER=data_scraping
-      - POSTGRES_DB=data_scraping_DB
-      - POSTGRES_PASSWORD=data_scraping
+      - POSTGRES_USER=data_mcp
+      - POSTGRES_DB=data_mcp_DB
+      - POSTGRES_PASSWORD=data_mcp
       - POSTGRES_HOST_AUTH_METHOD=trust
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER}"]
       interval: 3s
       timeout: 5s
     ports:
-      - 5433:5432
+      - 5431:5432

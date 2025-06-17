@@ -1,4 +1,4 @@
-package com.example.datas_craping.config;
+package com.example.mcp.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

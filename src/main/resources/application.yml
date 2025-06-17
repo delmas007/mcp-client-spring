@@ -1,15 +1,28 @@
 spring:
   application:
-    name: data scraping
+    name: mcp
 
+
+  ai:
+    mcp:
+      client:
+        stdio:
+          servers-configuration: classpath:mcp-servers.json
+    openai:
+      api-key: ${OPEN_AI_KEY}
+      chat:
+        options:
+          temperature: 1
+          model: ${SPRING_AI_MODEL}
   datasource:
-    url: jdbc:postgresql://localhost:5433/data_scraping_DB
-    username: data_scraping
-    password: data_scraping
+    url: jdbc:postgresql://localhost:5431/data_mcp_DB
+    username: data_mcp
+    password: data_mcp
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: update
-server:
-  address: 0.0.0.0
-  port: 8081
+
+github:
+  mcp:
+    pat: ${GITHUB_MCP_PAT}
