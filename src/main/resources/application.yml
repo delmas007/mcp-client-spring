@@ -2,10 +2,15 @@ spring:
   application:
     name: mcp
 
-
   ai:
     mcp:
       client:
+#        sse:
+#          connections:
+#            server1:
+#              url: http://localhost:8888
+#              sse-endpoint: /sse
+        type: sync
         stdio:
           servers-configuration: classpath:mcp-servers.json
     openai:
@@ -22,7 +27,16 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-
 github:
   mcp:
     pat: ${GITHUB_MCP_PAT}
+logging:
+  level:
+    org:
+      springframework:
+        ai:
+          mcp: TRACE
+    io:
+      modelcontextprotocol: TRACE
+server:
+  port: 8082

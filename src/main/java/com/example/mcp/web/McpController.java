@@ -1,9 +1,9 @@
 package com.example.mcp.web;
 
-import com.example.mcp.service.dto.ChatRequest;
 import com.example.mcp.service.MyAIAgent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
 
 @RestController
 @RequestMapping("/api/v1/ai")
@@ -13,7 +13,7 @@ public class McpController {
 
     @PostMapping("/chat")
     @ResponseBody
-    public String askAgent(@RequestParam String message) {
+    public Flux<String> askAgent(@RequestParam String message) {
         return agent.prompt(message);
     }
 
