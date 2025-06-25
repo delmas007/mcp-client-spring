@@ -15,13 +15,6 @@
         "run",
         "main.py"
       ]
-    },
-    "Python-MCP-Server": {
-      "command": "/home/delmas/PycharmProjects/Gestion de projet/.venv/bin/mcp",
-      "args": [
-        "run",
-        "/home/delmas/PycharmProjects/Gestion de projet/server.py"
-      ]
     }
   }
 }

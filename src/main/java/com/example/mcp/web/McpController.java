@@ -1,8 +1,10 @@
 package com.example.mcp.web;
 
 import com.example.mcp.service.MyAIAgent;
+import com.example.mcp.service.PdfToText;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import reactor.core.publisher.Flux;
 
 @RestController
@@ -13,8 +15,13 @@ public class McpController {
 
     @PostMapping("/chat")
     @ResponseBody
-    public Flux<String> askAgent(@RequestParam String message) {
+    public String askAgent(@RequestParam String message) {
         return agent.prompt(message);
+    }
+
+    @PostMapping("pdf")
+    public String pdf(@RequestParam("file") MultipartFile file) {
+        return PdfToText.pdfExtract(file.getResource());
     }
 
 }

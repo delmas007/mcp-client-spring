@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "Python-MCP-Server": {
+      "command": "/home/delmas/PycharmProjects/gestionnaire_de_projet/.venv/bin/mcp",
+      "args": [
+        "run",
+        "/home/delmas/PycharmProjects/gestionnaire_de_projet/server.py"
+      ]
+    }
+  }
+}

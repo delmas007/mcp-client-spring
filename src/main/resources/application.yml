@@ -5,14 +5,17 @@ spring:
   ai:
     mcp:
       client:
-#        sse:
-#          connections:
-#            server1:
-#              url: http://localhost:8888
+        sse:
+          connections:
+            server1:
+              url: http://localhost:8888
+              sse-endpoint: /sse
+#            server2:
+#              url: http://localhost:8000
 #              sse-endpoint: /sse
         type: sync
         stdio:
-          servers-configuration: classpath:mcp-servers.json
+          servers-configuration: classpath:mcp-servers-python.json
     openai:
       api-key: ${OPEN_AI_KEY}
       chat:
